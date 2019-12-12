@@ -18,7 +18,7 @@ function getdata() {
     });
 }
 function startBastibot2() {
-	T.get('search/tweets', {q: "sinaasappel OR sinasappel", result_type: "recent"}, function (err, data,response) {
+	T.get('search/tweets', {q: "sinaasappel OR sinasappel OR sinaasappels OR sinasappels", result_type: "recent"}, function (err, data,response) {
 		if (!err) {
 			
 		
@@ -44,15 +44,15 @@ function startBastibot2() {
 						
 						}
 						if (err) {
-							console.log('[BASTIBOT] Pls help qoute: ', err);
+							console.log('[BASTIBOT] Geen nieuwe tweets.');
 						}
 					});
 				}
 		} else {
-			console.log('pls help error: ', err);
+			console.log('[BASTIBOT] ERROR: ', err);
 		}
 	});
 }
-console.log('Bastibot gestart.');
+console.log('[BASTIBOT] Bastibot gestart.');
 startBastibot2();
 setInterval(startBastibot2, 30000);
